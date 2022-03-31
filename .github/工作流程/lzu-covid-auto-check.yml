@@ -1,16 +1,16 @@
+名称：兰州大学定时健康打卡
 
-name: 兰州大学定时健康打卡
+#控制工作流何时运行
+上：
+  #在推送或拉取请求事件上触发工作流，但仅针对主分支
+  推：
+  #每天3点、6点、8点、10点进行试打卡，注意点北京时间转为UTC时间再填下面
+  时间表：
+    - cron：' 0 0,2,19,22 * * * '
 
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-  # 每天3点、6点、8点、10点进行尝试打卡，注意要把北京时间转为UTC时间再填入下面
-  sche'dule:
-    - cron：' 0 0,2 * * * '
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
+  #允许您从“操作”选项卡手动运行此工作流程
+  工作流调度：
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # 健康打卡
